@@ -1,0 +1,41 @@
+.stoplight {
+  $light-size: 100px;
+  $border-size: 8px;
+  width: $light-size * 3 + 24px * 3 + $border-size * 2;
+  margin: 0 auto;
+  background: orange;
+  border-radius: 8px;
+  border: 8px solid black;
+  cursor: pointer;
+
+  .column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-light {
+    background: black;
+    height: $light-size;
+    width: $light-size;
+    border-radius: 50px;
+  }
+
+  &-red {
+    &.active {
+      background: red;
+    }
+  }
+
+  &-yellow {
+    &.active {
+      background: yellow;
+    }
+  }
+
+  &-green {
+    &.active {
+      background: green;
+    }
+  }
+}
