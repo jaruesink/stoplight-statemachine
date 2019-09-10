@@ -38,4 +38,12 @@
       background: green;
     }
   }
+
+  &-actions {
+    text-align: center;
+
+    button:first-child {
+      margin-right: 8px;
+    }
+  }
 }

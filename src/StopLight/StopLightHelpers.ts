@@ -13,7 +13,7 @@ export type StopLightState = {
   light: LightMachine;
 };
 
-export type StopLightActionTypes = 'SELECT-LIGHT';
+export type StopLightActionTypes = 'SELECT-LIGHT' | 'RESET-STATE';
 
 export type StopLightAction = {
   name: StopLightActionTypes;
@@ -39,6 +39,9 @@ export const stopLightActions = {
   'SELECT-LIGHT': (state: StopLightState, action: StopLightAction) => {
     const light = { ...lightMachine, color: lightMachine.transitions[state.light.color].switch() };
     return { ...state, light };
+  },
+  'RESET-STATE': (state: StopLightState, action: StopLightAction) => {
+    return { ...stopLightInitialState };
   }
 };
 
