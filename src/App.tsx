@@ -5,22 +5,28 @@ import StopLight from './StopLight/StopLight';
 import StopLightActions from './StopLight/StopLightActions';
 import { stopLightReducer, stopLightInitialState, StopLightState, StopLightAction } from './StopLight/StopLightHelpers';
 
+// Idea taken from: https://medium.com/@dai_shi/a-thought-on-react-context-default-value-fb3283cb5788
+const warningObject: {
+  state: any;
+  dispatch: any;
+} = {
+  get dispatch() {
+    throw new Error('Please use <ReduxProvider store={store}>');
+  },
+  get state() {
+    throw new Error('Please use <ReduxProvider store={store}>');
+  }
+};
+
 export const StopLightContext: React.Context<{
-  switchLight?: (value?: any) => void;
-  resetState?: (value?: any) => void;
   state: StopLightState;
-}> = React.createContext({ state: stopLightInitialState });
+  dispatch: React.Dispatch<StopLightAction>;
+}> = React.createContext(warningObject);
 
 const App: React.FC = () => {
   const [state, dispatch] = useReducer(stopLightReducer, stopLightInitialState);
   return (
-    <StopLightContext.Provider
-      value={{
-        state,
-        switchLight: () => dispatch({ name: 'SELECT-LIGHT' }),
-        resetState: () => dispatch({ name: 'RESET-STATE' })
-      }}
-    >
+    <StopLightContext.Provider value={{ state, dispatch }}>
       <div className="app columns">
         <header className="column">
           <h1>Stop Light State Machine</h1>
