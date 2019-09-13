@@ -1,4 +1,4 @@
-Link to now deployment: [Stop Light State Machine](https://stoplight-statemachine.jaruesink.now.sh)
+Link to Now deployment: [Stop Light State Machine](https://stoplight-statemachine.jaruesink.now.sh)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
