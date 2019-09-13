@@ -11,10 +11,10 @@ const warningObject: {
   dispatch: any;
 } = {
   get dispatch() {
-    throw new Error('Please use <ReduxProvider store={store}>');
+    throw new Error('Please use <[ContextName].Provider value={[add initial value here]}>');
   },
   get state() {
-    throw new Error('Please use <ReduxProvider store={store}>');
+    throw new Error('Please use <[ContextName].Provider value={[add initial value here]}>');
   }
 };
 
