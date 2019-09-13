@@ -41,8 +41,12 @@
   &-actions {
     text-align: center;
 
-    button:first-child {
+    button {
       margin-right: 8px;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }

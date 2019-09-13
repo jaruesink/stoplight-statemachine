@@ -6,7 +6,7 @@ it('GREEN turns YELLOW', () => {
   initialState.light.color = 'GREEN';
 
   // ACTION
-  const newState = stopLightReducer(initialState, { name: 'SELECT-LIGHT' });
+  const newState = stopLightReducer(initialState, { name: 'SWITCH-LIGHT' });
 
   // TEST
   expect(newState.light.color).toEqual('YELLOW');
@@ -18,7 +18,7 @@ it('YELLOW turns RED', () => {
   initialState.light.color = 'YELLOW';
 
   // ACTION
-  const newState = stopLightReducer(initialState, { name: 'SELECT-LIGHT' });
+  const newState = stopLightReducer(initialState, { name: 'SWITCH-LIGHT' });
 
   // TEST
   expect(newState.light.color).toEqual('RED');
@@ -30,7 +30,7 @@ it('RED turns GREEN', () => {
   initialState.light.color = 'RED';
 
   // ACTION
-  const newState = stopLightReducer(initialState, { name: 'SELECT-LIGHT' });
+  const newState = stopLightReducer(initialState, { name: 'SWITCH-LIGHT' });
 
   // TEST
   expect(newState.light.color).toEqual('GREEN');
